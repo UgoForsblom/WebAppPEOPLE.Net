@@ -34,8 +34,12 @@ namespace WebAppPEOPLE.Net.Models.Service
         }
 
         public PeopleViewModel All()
+
         {
-            return PeopleViewModel.Read();
+            PeopleViewModel peopleViewModel = new PeopleViewModel();
+            peopleViewModel.PersonList = _peopleRepo.Read();
+
+            return peopleViewModel;
         }
 
         public Person Edit(int id,Person person)
@@ -58,16 +62,15 @@ namespace WebAppPEOPLE.Net.Models.Service
 
         public PeopleViewModel FindBySearch(PeopleViewModel search)
         {
-            List<PeopleViewModel>  peopleSearchList = new List<PeopleViewModel>();
 
             foreach (Person item in _peopleRepo.Read())
             {
-                if (item.Search.Equals(search))
+                if (item.Name.Contains(search.Search))
                 {
-                    peopleSearchList.Add(item);
+                    search.PersonList.Add(item);
                 }
             }
-            return peopleSearchList;
+            return search;
         }
 
         public Person FindBy(int id)
@@ -77,7 +80,7 @@ namespace WebAppPEOPLE.Net.Models.Service
 
         public bool Remove(int id)
         {
-            return _peopleRepo.Delete(id);
+            return _peopleRepo.Delete(FindBy(id)) ;//Find person by id and delete
   
         }
     }

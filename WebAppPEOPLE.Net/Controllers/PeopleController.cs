@@ -12,6 +12,8 @@ namespace WebAppPEOPLE.Net.Controllers
 {
     public class PeopleController : Controller
     {
+        
+     
 
 
         public IActionResult Index()

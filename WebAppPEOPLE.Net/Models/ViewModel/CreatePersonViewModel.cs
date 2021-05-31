@@ -11,6 +11,7 @@ namespace WebAppPEOPLE.Net.Models.ViewModel.CreatePersonViewModel
 {
     public class CreatePersonViewModel
     {
+         
         [Required]
         [StringLength(30, MinimumLength = 3)]
         public string Name { get; set; }
@@ -20,7 +21,7 @@ namespace WebAppPEOPLE.Net.Models.ViewModel.CreatePersonViewModel
 
         [Required]
         [StringLength(40, MinimumLength = 3)]
-        public string City { get; set; }
+        public string City { get; set; }//
 
            
         }

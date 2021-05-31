@@ -1,8 +1,43 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model WebAppPEOPLE.Net.Models.PeopleViewModel
+@{
+    ViewData["Title"] = "Person Index";
 }
+<h1>Person Index</h1>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<a asp-action="CreatePersonViewModel">CreatePersonViewModel</a>
+
+<form asp-action=" Person Index" method="post">
+    <label asp-for="FilterText"></label>
+    <input asp-for="FilterText"/>
+    <input type ="submit"  value="Filter by Name"/>
+
+</form>
+
+@*<table>
+    <thead>
+        <tr>
+
+             <th>Name</th>
+             <th>PhoneNumber</th>
+             <th>City</th>
+              <th>Delete</th>
+
+            </tr>
+
+           </thead>
+
+           <tbody>
+              @foreach (var item in Model)
+                      {
+                         <tr>
+                             
+                              <td>@item.Name</td>
+                              <td>@item.PhoneNumber</td>
+                               <td>@item.City</td>
+                               <td><a asp-action="Remove" asp-route-id="@item.id">Remove</td>
+                            </tr>
+    }
+           </tbody>
+
+          </table>*@
+

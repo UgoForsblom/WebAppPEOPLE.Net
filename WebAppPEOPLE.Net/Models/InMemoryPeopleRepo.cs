@@ -79,7 +79,16 @@ namespace WebAppPEOPLE.Net.Models.Repo
    
         }
 
+        public Person Create(string Name, int PhoneNumber, string City)
+        {
+            throw new NotImplementedException();
         }
+
+        public bool Delete(Person person)
+        {
+            throw new NotImplementedException();
+        }
+    }
     }
 
            

@@ -11,7 +11,7 @@ namespace WebAppPEOPLE.Net.Models.Service
     {
         Person Add(CreatePersonViewModel person);
         PeopleViewModel All();
-        PeopleViewModel FindBy(PeopleViewModel search);
+        PeopleViewModel FindBySearch(PeopleViewModel search);
         Person FindBy(int id);
         Person Edit(int id, Person person);
         bool Remove(int id);
